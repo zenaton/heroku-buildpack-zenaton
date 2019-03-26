@@ -20,3 +20,10 @@ source "$BUILDPACK_DIR/bin/common.sh"
 # Install Zenaton Agent
 topic "Installing Zenaton Agent"
 curl https://gist.githubusercontent.com/pylebecq/748f2d2b10a86855cd5710f5840a7fbe/raw/4d67aa215c67b4898cd4875269d30b18201cbc3e/install-zenaton.sh | sh
+cp -R "$HOME/.zenaton" "$BUILD_DIR/.zenaton"
+
+# Install the Zenaton Agent runner
+topic "Installing Zenaton Agent runner"
+mkdir -p "$BUILD_DIR/.profile.d"
+cp "$BUILDPACK_DIR/extra/zenaton-agent.sh" "$BUILD_DIR/.profile.d/"
+chmod +x "$BUILD_DIR/.profile.d/zenaton-agent.sh"
