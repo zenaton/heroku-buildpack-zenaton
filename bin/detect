@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+echo "ZenatonAgent"
+exit 0
