@@ -6,7 +6,7 @@ set -e
 set -o pipefail
 
 # Debug
-set -x
+# set -x
 
 # Parse and derive params
 BUILD_DIR=$1
