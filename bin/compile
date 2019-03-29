@@ -19,7 +19,8 @@ source "$BUILDPACK_DIR/bin/common.sh"
 
 # Install Zenaton Agent
 topic "Installing Zenaton Agent"
-curl https://gist.githubusercontent.com/pylebecq/748f2d2b10a86855cd5710f5840a7fbe/raw/4d67aa215c67b4898cd4875269d30b18201cbc3e/install-zenaton.sh | sh
+export SKIP_START=1
+curl https://install.zenaton.com/ | sh
 cp -R "$HOME/.zenaton" "$BUILD_DIR/.zenaton"
 
 # Install the Zenaton Agent runner
