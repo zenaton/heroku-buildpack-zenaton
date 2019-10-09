@@ -30,5 +30,8 @@ else
     if [[ "$DYNO" =~ ^zenatonworker ]]; then
         echo "Start listening to application $ZENATON_APP_ID using environment $ZENATON_APP_ENV"
         bash -c "$AGENT_CLI listen $ZENATON_LISTEN_ARGS"
+    else
+        echo "Start listening to application $ZENATON_APP_ID using environment $ZENATON_APP_ENV in client mode"
+        bash -c "$AGENT_CLI listen --client $ZENATON_LISTEN_ARGS"
     fi
 fi
