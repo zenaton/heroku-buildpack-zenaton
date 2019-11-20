@@ -22,9 +22,3 @@ topic "Installing Zenaton Agent"
 export SKIP_START=1
 curl https://install.zenaton.com/ | sh
 cp -R "$HOME/.zenaton" "$BUILD_DIR/.zenaton"
-
-# Install the Zenaton Agent runner
-topic "Installing Zenaton Agent runner"
-mkdir -p "$BUILD_DIR/.profile.d"
-cp "$BUILDPACK_DIR/extra/zenaton-agent.sh" "$BUILD_DIR/.profile.d/"
-chmod +x "$BUILD_DIR/.profile.d/zenaton-agent.sh"
