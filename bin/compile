@@ -22,3 +22,9 @@ topic "Installing Zenaton Agent"
 export SKIP_START=1
 curl https://install.zenaton.com/ | sh
 cp -R "$HOME/.zenaton" "$BUILD_DIR/.zenaton"
+
+# Run the defaults.sh script
+echo "Running zenaton-agent-defaults.sh script"
+mkdir -p "$BUILD_DIR/.profile.d"
+cp "$BUILDPACK_DIR/extra/zenaton-agent-defaults.sh" "$BUILD_DIR/.profile.d/"
+chmod +x "$BUILD_DIR/.profile.d/zenaton-agent-defaults.sh"
