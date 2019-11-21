@@ -21,10 +21,14 @@ source "$BUILDPACK_DIR/bin/common.sh"
 topic "Installing Zenaton Agent"
 export SKIP_START=1
 curl https://install.zenaton.com/ | sh
-cp -R "$HOME/.zenaton" "$BUILD_DIR/.zenaton"
+cp -R "$HOME/.zenaton" "$BUILD_DIR"
 
-# Install the Zenaton Agent runner
-topic "Installing Zenaton Agent runner"
+# Create zenaton logs file
+topic "Creating zenaton.out & zenaton.err files"
+touch "$BUILD_DIR/zenaton.err" "$BUILD_DIR/zenaton.out"
+
+# Run the defaults.sh script
+topic "Installing zenaton-agent-defaults.sh script"
 mkdir -p "$BUILD_DIR/.profile.d"
-cp "$BUILDPACK_DIR/extra/zenaton-agent.sh" "$BUILD_DIR/.profile.d/"
-chmod +x "$BUILD_DIR/.profile.d/zenaton-agent.sh"
+cp "$BUILDPACK_DIR/extra/zenaton-agent-defaults.sh" "$BUILD_DIR/.profile.d/"
+chmod +x "$BUILD_DIR/.profile.d/zenaton-agent-defaults.sh"
