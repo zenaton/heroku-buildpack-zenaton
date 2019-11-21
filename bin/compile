@@ -28,7 +28,7 @@ topic "Creating zenaton.out & zenaton.err files"
 touch "$BUILD_DIR/zenaton.err" "$BUILD_DIR/zenaton.out"
 
 # Run the defaults.sh script
-echo "Running zenaton-agent-defaults.sh script"
+topic "Installing zenaton-agent-defaults.sh script"
 mkdir -p "$BUILD_DIR/.profile.d"
 cp "$BUILDPACK_DIR/extra/zenaton-agent-defaults.sh" "$BUILD_DIR/.profile.d/"
 chmod +x "$BUILD_DIR/.profile.d/zenaton-agent-defaults.sh"
