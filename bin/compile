@@ -23,6 +23,10 @@ export SKIP_START=1
 curl https://install.zenaton.com/ | sh
 cp -R "$HOME/.zenaton" "$BUILD_DIR"
 
+# Create zenaton logs file
+echo "Creating zenaton.out & zenaton.err"
+touch "$BUILD_DIR/zenaton.err" "$BUILD_DIR/zenaton.out"
+
 # Run the defaults.sh script
 echo "Running zenaton-agent-defaults.sh script"
 mkdir -p "$BUILD_DIR/.profile.d"
