@@ -1,6 +1,6 @@
 # heroku-buildpack-zenaton
 
-To be able to use Zenaton in your Heroku hosted app, you will need to use our Heroku buildpack. The buildpack will install a Zenaton Agent inside your dynos, allowing your application to dispatch tasks and workflows, send events, etc. You will also be able to use your dynos as Zenaton workers.
+The buildpack will install a Zenaton Agent inside your dynos, allowing your application to run tasks and workflows. You will also be able to use your dynos as Zenaton workers.
 
 ## Installation
 To add the buildpack to your project, as well as the required environment variables, use the following commands:
