@@ -1,3 +1,5 @@
+> ⚠️ This repository is abandoned.
+
 # heroku-buildpack-zenaton
 
 The buildpack will install a Zenaton Agent inside your dynos, allowing your application to run tasks and workflows. You will also be able to use your dynos as Zenaton workers.
